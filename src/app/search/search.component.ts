@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  constructor() { }
+  input: string = '';
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+  }
+
+  search(inputValue: string) {
+    if (inputValue !== '') {
+      this.dataService.searchResults(inputValue);
+      this.input = inputValue;
+    }
+
   }
 
 }

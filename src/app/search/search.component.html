@@ -1,12 +1,22 @@
 <div class="search">
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Search</button>
+  <form #f="ngForm">
+    <div class="input-group mb-3">
+      <input type="text"
+      name="search"
+      id="search"
+      #searchInput
+      maxlength="20"
+      class="form-control"
+      placeholder="Search..."
+      aria-label="search"
+      aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" (click)="search(searchInput.value)">Search</button>
+      </div>
     </div>
-  </div>
-  <div class="alert alert-danger" role="alert">
-    This input field is invalid
-  </div>
+    <div *ngIf="f.invalid" class="alert alert-danger" role="alert">
+      This input field is invalid
+    </div>
+  </form>
 </div>
 
