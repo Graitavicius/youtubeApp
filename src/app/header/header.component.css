@@ -1,0 +1,12 @@
+.title {
+  color: white;
+  text-align: left;
+  font-weight: bold;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navbar-brand {
+  display: inline-block;
+}
