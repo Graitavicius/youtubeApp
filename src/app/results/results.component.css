@@ -1,8 +1,4 @@
-.search-results {
-}
 .results {
-  /* display: grid; */
-  /* grid-template-columns: auto auto auto auto; */
   width: 100%;
   padding: auto;
   justify-content: center;
@@ -31,30 +27,3 @@
 .vid {
   width: 100%;
 }
-
-/* @media (max-width: 425px) {
-  .results {
-    grid-template-columns: auto;
-  }
-  .videos {
-    width: 200px;
-  }
-}
-
-@media (max-width: 767px) {
-  .results {
-    grid-template-columns: auto auto;
-  }
-  .videos {
-    width: 200px;
-  }
-}
-
-@media (max-width: 1025px) {
-  .results {
-    grid-template-columns: auto auto auto;
-  }
-  .videos {
-    width: 200px;
-  }
-} */

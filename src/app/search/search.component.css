@@ -3,10 +3,6 @@
   margin: 20px auto;
 }
 
-.alert {
-  padding: 0.5rem 0.5rem;
-}
-
 input:focus,
 button:focus {
   outline: none;
