@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
   videos = new BehaviorSubject<any>([]);
-  videoId;
+  videoId = new BehaviorSubject<any>('');
   valueOfTheSearch: string = '';
   constructor(private http: HttpClient) {
   }
@@ -27,12 +27,17 @@ export class DataService {
     return this.videos.asObservable();
   }
 
-  startPlayingVideo(index) {
-    this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${this.valueOfTheSearch}&key=${environment.youtubeApiKey}`)
-    .subscribe((res: any) => {
-      this.videoId = res.items[index].id.videoId;
-      console.log(this.videoId);
-    })
+  findCurrentVideoId() {
+    return this.http.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${this.valueOfTheSearch}&key=${environment.youtubeApiKey}`);
+
+  }
+
+  getIdObservable() {
+    return this.videoId.asObservable();
+  }
+
+  sendId() {
+    return this.videoId;
   }
 }
 
